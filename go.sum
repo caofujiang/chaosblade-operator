@@ -163,6 +163,8 @@ github.com/bugsnag/bugsnag-go v0.0.0-20141110184014-b1d153021fcd/go.mod h1:2oa8n
 github.com/bugsnag/osext v0.0.0-20130617224835-0dd3f918b21b/go.mod h1:obH5gd0BsqsP2LwDJ9aOkm/6J86V6lyAXCoQWGw3K50=
 github.com/bugsnag/panicwrap v0.0.0-20151223152923-e2c28503fcd0/go.mod h1:D/8v3kj0zr8ZAKg1AQ6crr+5VwKN5eIywRkfhyM/+dE=
 github.com/campoy/embedmd v1.0.0/go.mod h1:oxyr9RCiSXg0M3VJ3ks0UGfp98BpSSGr0kpiX3MzVl8=
+github.com/caofujiang/chaosblade-exec-os v0.0.0-20220803155505-34461a1f2422 h1:EihMWbCpT01D1KOs4j8MQNg56y7P1Q6/RbTq3XGCb84=
+github.com/caofujiang/chaosblade-exec-os v0.0.0-20220803155505-34461a1f2422/go.mod h1:UNDuSGNygBqqGVxUMhCL56BwK/up53bz8qKVOdEEyFE=
 github.com/cenkalti/backoff v0.0.0-20181003080854-62661b46c409/go.mod h1:90ReRw6GdpyfrHakVjL/QHaoyV4aDUVVkXQJJJ3NXXM=
 github.com/census-instrumentation/opencensus-proto v0.2.1/go.mod h1:f6KPmirojxKA12rnyqOA5BBL4O983OfeGPqjHWSTneU=
 github.com/cespare/xxhash v0.0.0-20181017004759-096ff4a8a059/go.mod h1:XrSqR1VqqWfGrhpAt58auRo0WTKS1nRRg3ghfAqPWnc=
@@ -174,8 +176,6 @@ github.com/cespare/xxhash/v2 v2.1.1/go.mod h1:VGX0DQ3Q6kWi7AoAeZDth3/j3BFtOZR5XL
 github.com/chai2010/gettext-go v0.0.0-20160711120539-c6fed771bfd5/go.mod h1:/iP1qXHoty45bqomnu2LM+VVyAEdWN+vtSHGlQgyxbw=
 github.com/chaosblade-io/chaosblade-exec-cri v1.5.1-0.20220429064319-1baacd4efc7e h1:ZF05b4HKrg3vKe6b0QI9UxtebZ3M8ZS3fNW/A7/z598=
 github.com/chaosblade-io/chaosblade-exec-cri v1.5.1-0.20220429064319-1baacd4efc7e/go.mod h1:ntY1QmFauHvQ6jIuAeJXjDoaNxuQxi6lmzodBsScZbc=
-github.com/chaosblade-io/chaosblade-exec-os v1.5.1-0.20220426025253-6d1640d20ae4 h1:L1S4syQy85xfC+Yb7S88DIkdYrRyJV1Rqq5GfBYwbKg=
-github.com/chaosblade-io/chaosblade-exec-os v1.5.1-0.20220426025253-6d1640d20ae4/go.mod h1:UNDuSGNygBqqGVxUMhCL56BwK/up53bz8qKVOdEEyFE=
 github.com/chaosblade-io/chaosblade-spec-go v1.5.1-0.20220423030509-6d8dbd90b300 h1:zHZkTkuMHbeSOZ/vXYgo+0p/qFfLaXQdwKyAFh75hyA=
 github.com/chaosblade-io/chaosblade-spec-go v1.5.1-0.20220423030509-6d8dbd90b300/go.mod h1:977aR5J4BBfLtFkYZkbHv1i7NJYN1X0x85xO3b8YLpc=
 github.com/checkpoint-restore/go-criu/v4 v4.1.0/go.mod h1:xUQBLp4RLc5zJtWY++yjOoMoB5lihDt7fai+75m+rGw=
