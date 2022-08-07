@@ -223,6 +223,10 @@ blade create k8s pod-script delay --time 10000 --file test.sh --function-name st
 				action.SetExample(`
 # Add commands to the script "start0() { echo this-is-error-message; exit 1; ... }"
 blade create k8s pod-script exit --exit-code 1 --exit-message this-is-error-message --file test.sh --function-name start0 --names nginx-app --kubeconfig ~/.kube/config --namespace default`)
+			case *script.ScripExecuteActionCommand:
+				action.SetExample(`
+# Add commands to execute the script "
+blade create k8s pod-script execute --file test.sh --file-args this-is-file-args-string  --names nginx-app --kubeconfig ~/.kube/config --namespace default`)
 			default:
 				action.SetExample(strings.Replace(action.Example(),
 					fmt.Sprintf("blade create %s %s", expModelSpec.Name(), action.Name()),
