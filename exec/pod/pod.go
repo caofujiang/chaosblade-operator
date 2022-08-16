@@ -226,7 +226,7 @@ blade create k8s pod-script exit --exit-code 1 --exit-message this-is-error-mess
 			case *script.ScripExecuteActionCommand:
 				action.SetExample(`
 # Add commands to execute the script "
-blade create k8s pod-script execute --file test.sh --file-args this-is-file-args-string  --names nginx-app --kubeconfig ~/.kube/config --namespace default`)
+blade create k8s pod-script execute --file test.sh --file-args this:is:file:args:string  --names nginx-app --kubeconfig ~/.kube/config --namespace default`)
 			default:
 				action.SetExample(strings.Replace(action.Example(),
 					fmt.Sprintf("blade create %s %s", expModelSpec.Name(), action.Name()),

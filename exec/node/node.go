@@ -327,7 +327,7 @@ blade create k8s node-script exit --exit-code 1 --exit-message this-is-error-mes
 ## using SSH channel
 blade create k8s node-script execute --file test.sh --file-args this-is-file-args-string --channel ssh --ssh-host 192.168.1.100 --ssh-user root
 ## using DaemonSet
-blade create k8s node-script execute --file test.sh --file-args this-is-file-args-string --names izbp1a4jchbdwkwi5hk7ekz --kubeconfig ~/.kube/config --timeout 30`)
+blade create k8s node-script execute --file test.sh --file-args this:is:file:args:string --names izbp1a4jchbdwkwi5hk7ekz --kubeconfig ~/.kube/config --timeout 30`)
 			default:
 				action.SetExample(strings.Replace(action.Example(),
 					fmt.Sprintf("blade create %s %s", expModelSpec.Name(), action.Name()),

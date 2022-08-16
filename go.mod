@@ -23,4 +23,4 @@ replace k8s.io/client-go => k8s.io/client-go v0.20.6 // Required by prometheus-o
 
 go 1.13
 
-replace github.com/chaosblade-io/chaosblade-exec-os v1.5.1-0.20220426025253-6d1640d20ae4 => github.com/caofujiang/chaosblade-exec-os v0.0.0-20220807110946-72c40857f9c7
+replace github.com/chaosblade-io/chaosblade-exec-os v1.5.1-0.20220426025253-6d1640d20ae4 => github.com/caofujiang/chaosblade-exec-os v0.0.0-20220816035532-7a898edc5648
