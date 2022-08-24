@@ -262,10 +262,12 @@ blade create k8s container-script delay --time 10000 --file test.sh --function-n
 				action.SetExample(`
 # Add commands to the script "start0() { echo this-is-error-message; exit 1; ... }"
 blade create k8s container-script exit --exit-code 1 --exit-message this-is-error-message --file test.sh --function-name start0 --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default`)
+
 			case *script.ScripExecuteActionCommand:
 				action.SetExample(`
 # Add commands to execute the script"
 blade create k8s container-execute  --file test.sh --file-args this:is:file:args:string --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default`)
+
 			case *criexec.RemoveActionCommand:
 				action.SetExample(`
 # Remove container in pod
