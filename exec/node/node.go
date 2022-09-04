@@ -352,7 +352,7 @@ func getResourceFlags() []spec.ExpFlagSpec {
 func NewSelfExpModelCommandSpec() spec.ExpModelCommandSpec {
 	return &SelfExpModelCommandSpec{
 		spec.BaseExpModelCommandSpec{
-			ExpFlags: []spec.ExpFlagSpec{},
+			ExpFlags:   []spec.ExpFlagSpec{},
 			ExpActions: []spec.ExpActionCommandSpec{
 				// TODO
 				//NewCordonActionCommandSpec(),
