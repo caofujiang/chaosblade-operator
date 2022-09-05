@@ -19,10 +19,10 @@ require (
 	sigs.k8s.io/controller-runtime v0.6.0
 )
 
-replace k8s.io/client-go => k8s.io/client-go v0.20.6 // Required by prometheus-operator
-
 go 1.13
 
-replace github.com/chaosblade-io/chaosblade-exec-os v1.5.1-0.20220426025253-6d1640d20ae4 => gitlab.x-city.com.cn/chaosblade/chaosblade-exec-os v1.6.1
-
-replace github.com/chaosblade-io/chaosblade-spec-go v1.6.0 => gitlab.x-city.com.cn/chaosblade/chaosblade-spec-go v1.6.1
+replace (
+	github.com/chaosblade-io/chaosblade-exec-os v1.5.1-0.20220426025253-6d1640d20ae4 => gitlab.x-city.com.cn/chaosblade/chaosblade-exec-os v1.6.3
+	github.com/chaosblade-io/chaosblade-spec-go v1.6.0 => gitlab.x-city.com.cn/chaosblade/chaosblade-spec-go v1.6.2
+	k8s.io/client-go => k8s.io/client-go v0.20.6 // Required by prometheus-operator
+)
