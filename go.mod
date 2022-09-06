@@ -1,9 +1,9 @@
 module github.com/chaosblade-io/chaosblade-operator
 
 require (
-	github.com/chaosblade-io/chaosblade-exec-cri v1.5.1-0.20220429064319-1baacd4efc7e
-	github.com/chaosblade-io/chaosblade-exec-os v1.5.1-0.20220426025253-6d1640d20ae4
-	github.com/chaosblade-io/chaosblade-spec-go v1.6.0
+	github.com/chaosblade-io/chaosblade-exec-cri v1.7.0
+	github.com/chaosblade-io/chaosblade-exec-os v1.7.0
+	github.com/chaosblade-io/chaosblade-spec-go v1.7.0
 	github.com/ethercflow/hookfs v0.3.0
 	github.com/go-logr/logr v0.2.1 // indirect
 	github.com/go-logr/zapr v0.2.0 // indirect
@@ -22,7 +22,7 @@ require (
 go 1.13
 
 replace (
-	github.com/chaosblade-io/chaosblade-exec-os v1.5.1-0.20220426025253-6d1640d20ae4 => gitlab.x-city.com.cn/chaosblade/chaosblade-exec-os v1.6.2
-	github.com/chaosblade-io/chaosblade-spec-go v1.6.0 => gitlab.x-city.com.cn/chaosblade/chaosblade-spec-go v1.6.2
+	github.com/chaosblade-io/chaosblade-exec-os v1.7.0 => gitlab.x-city.com.cn/chaosblade/chaosblade-exec-os v1.7.0
+	github.com/chaosblade-io/chaosblade-spec-go v1.7.0 => gitlab.x-city.com.cn/chaosblade/chaosblade-spec-go v1.7.0
 	k8s.io/client-go => k8s.io/client-go v0.20.6 // Required by prometheus-operator
 )
