@@ -265,8 +265,8 @@ blade create k8s container-script exit --exit-code 1 --exit-message this-is-erro
 
 			case *script.ScripExecuteActionCommand:
 				action.SetExample(`
-# Add commands to execute the script"
-blade create k8s container-execute  --file test.sh --file-args this:is:file:args:string --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default`)
+# Add commands to the script  execute the script"
+blade create k8s container-script  execute  --file test.sh --file-args this:is:file:args:string --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default`)
 
 			case *criexec.RemoveActionCommand:
 				action.SetExample(`
