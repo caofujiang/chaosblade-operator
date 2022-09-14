@@ -1124,8 +1124,8 @@ github.com/yvasiyarov/gorelic v0.0.0-20141212073537-a9bba5b9ab50/go.mod h1:NUSPS
 github.com/yvasiyarov/newrelic_platform_go v0.0.0-20140908184405-b21fdbd4370f/go.mod h1:GlGEuHIJweS1mbCqG+7vt2nvWLzLLnRHbXz5JKd/Qbg=
 github.com/ziutek/mymysql v1.5.4/go.mod h1:LMSpPZ6DbqWFxNCHW77HeMg9I646SAhApZ/wKdgO/C0=
 gitlab.com/nyarla/go-crypt v0.0.0-20160106005555-d9a5dc2b789b/go.mod h1:T3BPAOm2cqquPa0MKWeNkmOM5RQsRhkrwMWonFMN7fE=
-gitlab.x-city.com.cn/chaosblade/chaosblade-exec-cri v1.7.0 h1:4/AxdJT7EYc2z3fIpX94gqF5sUHz5Kn24McoQP91RJQ=
-gitlab.x-city.com.cn/chaosblade/chaosblade-exec-cri v1.7.0/go.mod h1:DGVE74kbt2lhsFHUzhnABm4APUKBmr+y1APWllA9mXg=
+gitlab.x-city.com.cn/chaosblade/chaosblade-exec-cri v1.7.1 h1:52JbYivU9mzz4DSroQu4whptKr7F5hrkfhjGdiKqpck=
+gitlab.x-city.com.cn/chaosblade/chaosblade-exec-cri v1.7.1/go.mod h1:DGVE74kbt2lhsFHUzhnABm4APUKBmr+y1APWllA9mXg=
 gitlab.x-city.com.cn/chaosblade/chaosblade-exec-os v1.7.0 h1:KSkpJvDB0CbrtwXNbkeFmMNd7O7vbYKC+G3befjpoHI=
 gitlab.x-city.com.cn/chaosblade/chaosblade-exec-os v1.7.0/go.mod h1:yvqQ2p1MLk50ReMyYtVw6Thtl4PQM7oDGN87bW1GWz0=
 gitlab.x-city.com.cn/chaosblade/chaosblade-spec-go v1.7.0 h1:Lud2N4C3LYz9CuSOoyuSn+7aqKj0K1sMlg8T9wFjg6I=
