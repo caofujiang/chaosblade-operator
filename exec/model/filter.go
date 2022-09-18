@@ -23,8 +23,6 @@ import (
 	"github.com/chaosblade-io/chaosblade-spec-go/spec"
 	"github.com/sirupsen/logrus"
 	"k8s.io/api/core/v1"
-	"k8s.io/apimachinery/pkg/selection"
-	pkglabels "k8s.io/apimachinery/pkg/labels"
 )
 
 func GetOneAvailableContainerIdFromPod(pod v1.Pod) (containerId, containerName, runtime string, err error) {
@@ -42,51 +40,33 @@ func GetOneAvailableContainerIdFromPod(pod v1.Pod) (containerId, containerName, 
 	return "", "", "", fmt.Errorf("cannot find a valiable container in %s pod", pod.Name)
 }
 
-func ParseLabels(labels string) []pkglabels.Requirement {
-	labelArr := strings.Split(labels, ",")
-	requirements := make([]pkglabels.Requirement, 0, len(labelArr))
-	labelsMap := make(map[string][]string, 0)
+func ParseLabels(labels string) map[string]string {
+	labelsMap := make(map[string]string, 0)
 	if labels == "" {
-		return requirements
+		return labelsMap
 	}
-
+	labelArr := strings.Split(labels, ",")
 	for _, label := range labelArr {
 		keyValue := strings.SplitN(label, "=", 2)
 		if len(keyValue) != 2 {
 			logrus.Warningf("label %s is illegal", label)
 			continue
 		}
-		if labelsMap[keyValue[0]] == nil {
-			valueArr := make([]string, 0)
-			valueArr = append(valueArr, keyValue[1])
-			labelsMap[keyValue[0]] = valueArr
-		} else {
-			labelsMap[keyValue[0]] = append(labelsMap[keyValue[0]], keyValue[1])
-		}
+		labelsMap[keyValue[0]] = keyValue[1]
 	}
-
-	for label, value := range labelsMap {
-		requirement, err := pkglabels.NewRequirement(label, selection.In, value)
-		if err != nil {
-			logrus.Warningf("requirement %s-%s is illegal", label, value)
-			continue
-		}
-		requirements = append(requirements, *requirement)
-	}
-	return requirements
+	return labelsMap
 }
 
-func MapContains(bigMap map[string]string, requirements []pkglabels.Requirement) bool {
-	if bigMap == nil || requirements == nil {
+func MapContains(bigMap map[string]string, subMap map[string]string) bool {
+	if bigMap == nil || subMap == nil {
 		return false
 	}
-	labelSet := pkglabels.Set(bigMap)
-	for i := 0; i < len(requirements); i++ {
-		if requirements[i].Matches(labelSet) {
-			return true
+	for k, v := range subMap {
+		if bigMap[k] != v {
+			return false
 		}
 	}
-	return false
+	return true
 }
 
 func CheckFlags(flags map[string]string) *spec.Response {

@@ -22,7 +22,7 @@ require (
 go 1.13
 
 replace (
-	github.com/chaosblade-io/chaosblade-exec-cri v1.7.0 => gitlab.x-city.com.cn/chaosblade/chaosblade-exec-cri v1.7.1
+	github.com/chaosblade-io/chaosblade-exec-cri v1.7.0 => gitlab.x-city.com.cn/chaosblade/chaosblade-exec-cri v1.7.0
 	github.com/chaosblade-io/chaosblade-exec-os v1.7.0 => gitlab.x-city.com.cn/chaosblade/chaosblade-exec-os v1.7.0
 	github.com/chaosblade-io/chaosblade-spec-go v1.7.0 => gitlab.x-city.com.cn/chaosblade/chaosblade-spec-go v1.7.0
 	k8s.io/client-go => k8s.io/client-go v0.20.6 // Required by prometheus-operator
