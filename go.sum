@@ -163,6 +163,12 @@ github.com/bugsnag/bugsnag-go v0.0.0-20141110184014-b1d153021fcd/go.mod h1:2oa8n
 github.com/bugsnag/osext v0.0.0-20130617224835-0dd3f918b21b/go.mod h1:obH5gd0BsqsP2LwDJ9aOkm/6J86V6lyAXCoQWGw3K50=
 github.com/bugsnag/panicwrap v0.0.0-20151223152923-e2c28503fcd0/go.mod h1:D/8v3kj0zr8ZAKg1AQ6crr+5VwKN5eIywRkfhyM/+dE=
 github.com/campoy/embedmd v1.0.0/go.mod h1:oxyr9RCiSXg0M3VJ3ks0UGfp98BpSSGr0kpiX3MzVl8=
+github.com/caofujiang/chaosblade-exec-cri v1.7.0 h1:+swrsvXcqwqPNNIo6FTF63eGxfTIq3uEKw38w0PgCCg=
+github.com/caofujiang/chaosblade-exec-cri v1.7.0/go.mod h1:DGVE74kbt2lhsFHUzhnABm4APUKBmr+y1APWllA9mXg=
+github.com/caofujiang/chaosblade-exec-os v1.7.0 h1:o7e6Jn8r1aj+BweIV9+qT1eX28gxvKiHwm2yUYo3FR4=
+github.com/caofujiang/chaosblade-exec-os v1.7.0/go.mod h1:yvqQ2p1MLk50ReMyYtVw6Thtl4PQM7oDGN87bW1GWz0=
+github.com/caofujiang/chaosblade-spec-go v1.7.0 h1:z5xpih1qf90jF8lJBoN4zHDK6QtKXrVPbY3ehgYxyfk=
+github.com/caofujiang/chaosblade-spec-go v1.7.0/go.mod h1:GMDRCEt9jw2+PdX+S2eKBg4ES6PENRc7xsLohWJWM6s=
 github.com/cenkalti/backoff v0.0.0-20181003080854-62661b46c409/go.mod h1:90ReRw6GdpyfrHakVjL/QHaoyV4aDUVVkXQJJJ3NXXM=
 github.com/census-instrumentation/opencensus-proto v0.2.1/go.mod h1:f6KPmirojxKA12rnyqOA5BBL4O983OfeGPqjHWSTneU=
 github.com/cespare/xxhash v0.0.0-20181017004759-096ff4a8a059/go.mod h1:XrSqR1VqqWfGrhpAt58auRo0WTKS1nRRg3ghfAqPWnc=
@@ -1124,12 +1130,6 @@ github.com/yvasiyarov/gorelic v0.0.0-20141212073537-a9bba5b9ab50/go.mod h1:NUSPS
 github.com/yvasiyarov/newrelic_platform_go v0.0.0-20140908184405-b21fdbd4370f/go.mod h1:GlGEuHIJweS1mbCqG+7vt2nvWLzLLnRHbXz5JKd/Qbg=
 github.com/ziutek/mymysql v1.5.4/go.mod h1:LMSpPZ6DbqWFxNCHW77HeMg9I646SAhApZ/wKdgO/C0=
 gitlab.com/nyarla/go-crypt v0.0.0-20160106005555-d9a5dc2b789b/go.mod h1:T3BPAOm2cqquPa0MKWeNkmOM5RQsRhkrwMWonFMN7fE=
-gitlab.x-city.com.cn/chaosblade/chaosblade-exec-cri v1.7.0 h1:4/AxdJT7EYc2z3fIpX94gqF5sUHz5Kn24McoQP91RJQ=
-gitlab.x-city.com.cn/chaosblade/chaosblade-exec-cri v1.7.0/go.mod h1:DGVE74kbt2lhsFHUzhnABm4APUKBmr+y1APWllA9mXg=
-gitlab.x-city.com.cn/chaosblade/chaosblade-exec-os v1.7.0 h1:KSkpJvDB0CbrtwXNbkeFmMNd7O7vbYKC+G3befjpoHI=
-gitlab.x-city.com.cn/chaosblade/chaosblade-exec-os v1.7.0/go.mod h1:yvqQ2p1MLk50ReMyYtVw6Thtl4PQM7oDGN87bW1GWz0=
-gitlab.x-city.com.cn/chaosblade/chaosblade-spec-go v1.7.0 h1:Lud2N4C3LYz9CuSOoyuSn+7aqKj0K1sMlg8T9wFjg6I=
-gitlab.x-city.com.cn/chaosblade/chaosblade-spec-go v1.7.0/go.mod h1:GMDRCEt9jw2+PdX+S2eKBg4ES6PENRc7xsLohWJWM6s=
 go.elastic.co/apm v1.5.0/go.mod h1:OdB9sPtM6Vt7oz3VXt7+KR96i9li74qrxBGHTQygFvk=
 go.elastic.co/apm/module/apmhttp v1.5.0/go.mod h1:1FbmNuyD3ddauwzgVwFB0fqY6KbZt3JkV187tGCYYhY=
 go.elastic.co/apm/module/apmot v1.5.0/go.mod h1:d2KYwhJParTpyw2WnTNy8geNlHKKFX+4oK3YLlsesWE=
