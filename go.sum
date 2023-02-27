@@ -165,8 +165,8 @@ github.com/bugsnag/panicwrap v0.0.0-20151223152923-e2c28503fcd0/go.mod h1:D/8v3k
 github.com/campoy/embedmd v1.0.0/go.mod h1:oxyr9RCiSXg0M3VJ3ks0UGfp98BpSSGr0kpiX3MzVl8=
 github.com/caofujiang/chaosblade-exec-cri v1.7.3 h1:Bzbpifr8dJ1yInW1wYR9bN8BfEvTZ1psEO3cP9rD95c=
 github.com/caofujiang/chaosblade-exec-cri v1.7.3/go.mod h1:twTTgYVHm8JXcbyK4y3x1CjTiJEeIMet3BZxV2jpJek=
-github.com/caofujiang/chaosblade-exec-os v1.8.7 h1:zBv8maxbHUb9Mx6sKYPIzBnu/3zMF4Z3+wUdsi7CoQw=
-github.com/caofujiang/chaosblade-exec-os v1.8.7/go.mod h1:vkS3w9m7Hn+7JMesQk6+w3inK/KLwi72L0ilSZP+L6Q=
+github.com/caofujiang/chaosblade-exec-os v1.9.1 h1:e+NDeqsfGTfsaYejQ+0pCPB7Ess9uU/Vnd1+zwG+540=
+github.com/caofujiang/chaosblade-exec-os v1.9.1/go.mod h1:vB7jqDB3FwPbRSEzu+ihPUUmLCqRsQBp9rDVfv40L3I=
 github.com/caofujiang/chaosblade-spec-go v1.7.5 h1:ZjKTWlXrTHwOM6WDZwWTnGPFMHKskRbmUzQJGSWQSnw=
 github.com/caofujiang/chaosblade-spec-go v1.7.5/go.mod h1:GMDRCEt9jw2+PdX+S2eKBg4ES6PENRc7xsLohWJWM6s=
 github.com/cenkalti/backoff v0.0.0-20181003080854-62661b46c409/go.mod h1:90ReRw6GdpyfrHakVjL/QHaoyV4aDUVVkXQJJJ3NXXM=

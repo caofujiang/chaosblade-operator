@@ -20,7 +20,8 @@ import (
 	"fmt"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/cpu"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/disk"
-        "github.com/chaosblade-io/chaosblade-exec-os/exec/file"
+	"github.com/chaosblade-io/chaosblade-exec-os/exec/file"
+	"github.com/chaosblade-io/chaosblade-exec-os/exec/http"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/mem"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/network"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/network/tc"
@@ -383,6 +384,40 @@ blade create k8s node-script exit --exit-code 1 --exit-message this-is-error-mes
 blade create k8s node-script execute --file test.sh --file-args this:is:file:args:string --dsn=root:Spx#123456@tcp(10.148.55.116:3306)/blade_ops --nfs-host 10.148.55.117:/record --channel ssh --ssh-host 192.168.1.100 --ssh-user root
 ## using DaemonSet
 blade create k8s node-script execute --file test.sh --file-args this:is:file:args:string --dsn=root:Spx#123456@tcp(10.148.55.116:3306)/blade_ops  --nfs-host 10.148.55.117:/record  --names izbp1a4jchbdwkwi5hk7ekz --kubeconfig ~/.kube/config --timeout 30`)
+			case *http.DelayHttpActionCommandSpec:
+				action.SetExample(`
+# Add commands to the http2  execute the delay
+# using SSH channel
+blade create k8s node-http2 delay --url https://www.taobao.com --time 10000 --channel ssh --ssh-host 192.168.1.100 --ssh-user root
+# using DaemonSet
+blade create k8s node-http2 delay --url https://www.taobao.com --time 10000 --names izbp1a4jchbdwkwi5hk7ekz --kubeconfig ~/.kube/config --timeout 30
+
+# using SSH channel
+blade create k8s node-http2 delay --url https://www.taobao.com --target request--channel ssh --ssh-host 192.168.1.100 --ssh-user root
+# using DaemonSet
+blade create k8s node-http2 delay --url https://www.taobao.com --target request --time 10000 --names izbp1a4jchbdwkwi5hk7ekz --kubeconfig ~/.kube/config --timeout 30
+
+# Add commands to the http2  execute the delay, sleep a  10000(10s) delay response
+# using SSH channel
+blade create k8s node-http2 delay --url https://www.taobao.com --target response --time 10000 --channel ssh --ssh-host 192.168.1.100 --ssh-user root
+# using DaemonSet
+blade create k8s node-http2 delay --url https://www.taobao.com --target response --time 10000 --names izbp1a4jchbdwkwi5hk7ekz --kubeconfig ~/.kube/config --timeout 30`)
+			case *http.RequestHttpActionCommandSpec:
+				action.SetExample(`
+# Add commands to the http2  execute the count request
+# using SSH channel
+blade create k8s container-http2 request --url https://www.taobao.com --count 10 --channel ssh --ssh-host 192.168.1.100 --ssh-user root
+
+# using DaemonSet
+blade create k8s container-http2 request --url https://www.taobao.com --count 10 --names izbp1a4jchbdwkwi5hk7ekz --kubeconfig ~/.kube/config --timeout 30`)
+			case *http.TimeOutHttpActionCommandSpec:
+				action.SetExample(`
+# Create a http2 1000(1s) timeout experiment
+# using SSH channel
+blade create k8s container-http2 timeout --url https://www.taobao.com --time 1000 --channel ssh --ssh-host 192.168.1.100 --ssh-user root
+
+# using DaemonSet
+blade create k8s container-http2 timeout --url https://www.taobao.com --time 1000 --names izbp1a4jchbdwkwi5hk7ekz --kubeconfig ~/.kube/config --timeout 30`)
 			default:
 				action.SetExample(strings.Replace(action.Example(),
 					fmt.Sprintf("blade create %s %s", expModelSpec.Name(), action.Name()),
