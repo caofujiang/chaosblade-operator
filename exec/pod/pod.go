@@ -172,6 +172,14 @@ blade create k8s pod-network drop --names nginx-app --kubeconfig ~/.kube/config 
 				action.SetExample(
 					`# The domain name www.baidu.com is not accessible
 blade create k8s pod-network dns --domain www.baidu.com --ip 10.0.0.0 --names nginx-app --kubeconfig ~/.kube/config --namespace default`)
+			case *network.DownActionSpec:
+				action.SetExample(
+					`# down network interface card
+blade create k8s pod-network down --device lo --duration 0.003 --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default`)
+			case *network.FloodActionSpec:
+				action.SetExample(
+					`# generate a mount of network traffic by using iperf client 
+blade create k8s pod-network flood --ip=172.16.93.128 --duration=30  --port 5201 --rate=10m --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default`)
 			case *tc.LossActionSpec:
 				action.SetExample(`# Access to native 8080 and 8081 ports lost 70% of packets
 blade create k8s pod-network loss --percent 70 --interface eth0 --local-port 8080,8081 --names nginx-app --kubeconfig ~/.kube/config --namespace default

@@ -22,6 +22,7 @@ import (
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/cpu"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/disk"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/file"
+	"github.com/chaosblade-io/chaosblade-exec-os/exec/http"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/mem"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/network"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/network/tc"
@@ -110,7 +111,6 @@ blade create k8s container-cpu load --cpu-list 1-3 --names nginx-app --container
 
 # Specified percentage load in the container
 blade create k8s container-cpu load --cpu-percent 60 --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default`)
-
 			case *disk.FillActionSpec:
 				action.SetLongDesc("The disk fill scenario experiment in the container")
 				action.SetExample(
@@ -125,6 +125,40 @@ blade create k8s container-disk fill --path /home --percent 80 --retain-handle -
 blade c k8s container-disk fill --path /home --reserve 1024 --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default
 `)
 			case *disk.BurnActionSpec:
+				action.SetLongDesc("Disk read and write IO load experiment in the container")
+				action.SetExample(
+					`# The data of rkB/s, wkB/s and % Util were mainly observed. Perform disk read IO high-load scenarios
+blade create k8s container-disk burn --read --path /home --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default
+
+# Perform disk write IO high-load scenarios
+blade create k8s container-disk burn --write --path /home --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default8
+
+# Read and write IO load scenarios are performed at the same time. Path is not specified. The default is /
+blade create k8s container-disk burn --read --write --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default`)
+
+			case *http.DelayHttpActionCommandSpec:
+				action.SetLongDesc("Disk read and write IO load experiment in the container")
+				action.SetExample(
+					`# The data of rkB/s, wkB/s and % Util were mainly observed. Perform disk read IO high-load scenarios
+blade create k8s container-disk burn --read --path /home --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default
+
+# Perform disk write IO high-load scenarios
+blade create k8s container-disk burn --write --path /home --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default8
+
+# Read and write IO load scenarios are performed at the same time. Path is not specified. The default is /
+blade create k8s container-disk burn --read --write --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default`)
+			case *http.RequestHttpActionCommandSpec:
+				action.SetLongDesc("Disk read and write IO load experiment in the container")
+				action.SetExample(
+					`# The data of rkB/s, wkB/s and % Util were mainly observed. Perform disk read IO high-load scenarios
+blade create k8s container-disk burn --read --path /home --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default
+
+# Perform disk write IO high-load scenarios
+blade create k8s container-disk burn --write --path /home --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default8
+
+# Read and write IO load scenarios are performed at the same time. Path is not specified. The default is /
+blade create k8s container-disk burn --read --write --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default`)
+			case *http.TimeOutHttpActionCommandSpec:
 				action.SetLongDesc("Disk read and write IO load experiment in the container")
 				action.SetExample(
 					`# The data of rkB/s, wkB/s and % Util were mainly observed. Perform disk read IO high-load scenarios
@@ -227,6 +261,14 @@ blade create k8s container-network drop --source-port 80 --network-traffic in --
 				action.SetExample(
 					`# The domain name www.baidu.com is not accessible
 blade create k8s container-network dns --domain www.baidu.com --ip 10.0.0.0 --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default`)
+			case *network.DownActionSpec:
+				action.SetExample(
+					`# down network interface card
+blade create k8s container-network down --device lo --duration 0.003 --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default`)
+			case *network.FloodActionSpec:
+				action.SetExample(
+					`# generate a mount of network traffic by using iperf client 
+blade create k8s container-network flood --ip=172.16.93.128 --duration=30  --port 5201 --rate=10m --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default`)
 			case *tc.LossActionSpec:
 				action.SetExample(`# Access to native 8080 and 8081 ports lost 70% of packets
 blade create k8s container-network loss --percent 70 --interface eth0 --local-port 8080,8081 --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default

@@ -3,7 +3,7 @@
 # chaosblade-operator
 operator:
   repository: caofujiang/chaosblade-operator
-  version: 1.7.1
+  version: 1.7.2
 
   # image.pullPolicy: must be Always|IfNotPresent|Never
   pullPolicy: IfNotPresent
@@ -13,7 +13,7 @@ operator:
 
 blade:
   repository: caofujiang/chaosblade-tool
-  version: 1.7.1
+  version: 1.7.2
   pullPolicy: IfNotPresent
   downloadUrl: ""
 

@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/cpu"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/disk"
-        "github.com/chaosblade-io/chaosblade-exec-os/exec/file"
+	"github.com/chaosblade-io/chaosblade-exec-os/exec/file"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/mem"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/network"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/network/tc"
@@ -135,6 +135,20 @@ blade create k8s node-network drop --source-port 80 --network-traffic in --names
 blade create k8s node-network dns --domain www.baidu.com --ip 10.0.0.0 --channel ssh --ssh-host 192.168.1.100 --ssh-user root
 ## using DaemonSet
 blade create k8s node-network dns --domain www.baidu.com --ip 10.0.0.0 --channel ssh --names izbp1a4jchbdwkwi5hk7ekz --kubeconfig ~/.kube/config --timeout 30`)
+			case *network.DownActionSpec:
+				action.SetLongDesc(`The network interface card down experiment scenario for k8s node.
+!!! Using DaemonSet may result in failure to use the kubernetes API for destroy experiment.
+!!! Please use caution, add a timeout parameter for automatic destroy, or use the SSH channel.`)
+				action.SetExample(
+					`# down network interface card
+blade create k8s node-network down --device lo --duration 0.003 --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --timeout 30`)
+			case *network.FloodActionSpec:
+				action.SetLongDesc(`The  network traffic experiment scenario for k8s node
+!!! Using DaemonSet may result in failure to use the kubernetes API for destroy experiment.
+!!! Please use caution, add a timeout parameter for automatic destroy, or use the SSH channel.`)
+				action.SetExample(
+					`# generate a mount of network traffic by using iperf client 
+blade create k8s node-network flood --ip=172.16.93.128 --duration=30  --port 5201 --rate=10m --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --timeout 30`)
 			case *tc.LossActionSpec:
 				action.SetLongDesc(`
 !!! Using DaemonSet may result in failure to use the kubernetes API for destroy experiment.
@@ -407,7 +421,7 @@ func getResourceFlags() []spec.ExpFlagSpec {
 func NewSelfExpModelCommandSpec() spec.ExpModelCommandSpec {
 	return &SelfExpModelCommandSpec{
 		spec.BaseExpModelCommandSpec{
-			ExpFlags:   []spec.ExpFlagSpec{},
+			ExpFlags: []spec.ExpFlagSpec{},
 			ExpActions: []spec.ExpActionCommandSpec{
 				// TODO
 				//NewCordonActionCommandSpec(),
