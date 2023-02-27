@@ -135,41 +135,6 @@ blade create k8s container-disk burn --write --path /home --names nginx-app --co
 
 # Read and write IO load scenarios are performed at the same time. Path is not specified. The default is /
 blade create k8s container-disk burn --read --write --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default`)
-
-			case *http.DelayHttpActionCommandSpec:
-				action.SetLongDesc("Disk read and write IO load experiment in the container")
-				action.SetExample(
-					`# The data of rkB/s, wkB/s and % Util were mainly observed. Perform disk read IO high-load scenarios
-blade create k8s container-disk burn --read --path /home --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default
-
-# Perform disk write IO high-load scenarios
-blade create k8s container-disk burn --write --path /home --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default8
-
-# Read and write IO load scenarios are performed at the same time. Path is not specified. The default is /
-blade create k8s container-disk burn --read --write --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default`)
-			case *http.RequestHttpActionCommandSpec:
-				action.SetLongDesc("Disk read and write IO load experiment in the container")
-				action.SetExample(
-					`# The data of rkB/s, wkB/s and % Util were mainly observed. Perform disk read IO high-load scenarios
-blade create k8s container-disk burn --read --path /home --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default
-
-# Perform disk write IO high-load scenarios
-blade create k8s container-disk burn --write --path /home --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default8
-
-# Read and write IO load scenarios are performed at the same time. Path is not specified. The default is /
-blade create k8s container-disk burn --read --write --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default`)
-			case *http.TimeOutHttpActionCommandSpec:
-				action.SetLongDesc("Disk read and write IO load experiment in the container")
-				action.SetExample(
-					`# The data of rkB/s, wkB/s and % Util were mainly observed. Perform disk read IO high-load scenarios
-blade create k8s container-disk burn --read --path /home --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default
-
-# Perform disk write IO high-load scenarios
-blade create k8s container-disk burn --write --path /home --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default8
-
-# Read and write IO load scenarios are performed at the same time. Path is not specified. The default is /
-blade create k8s container-disk burn --read --write --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default`)
-
 			case *mem.MemLoadActionCommand:
 				action.SetLongDesc("The memory fill experiment scenario in container")
 				action.SetExample(
@@ -304,12 +269,29 @@ blade create k8s container-script delay --time 10000 --file test.sh --function-n
 				action.SetExample(`
 # Add commands to the script "start0() { echo this-is-error-message; exit 1; ... }"
 blade create k8s container-script exit --exit-code 1 --exit-message this-is-error-message --file test.sh --function-name start0 --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default`)
-
 			case *script.ScripExecuteActionCommand:
 				action.SetExample(`
 # Add commands to the script  execute the script"
 blade create k8s container-script  execute  --file test.sh --file-args this:is:file:args:string --dsn=root:Spx#123456@tcp(10.148.55.116:3306)/blade_ops   --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default`)
 
+			case *http.DelayHttpActionCommandSpec:
+				action.SetExample(`
+# Add commands to the http2  execute the delay
+blade create k8s container-http2 delay --url https://www.taobao.com --time 10000 --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default
+
+# Add commands to the http2  execute the delay,sleep a 10000(10s) delay request
+blade create k8s container-http2 delay --url https://www.taobao.com --target request --time 10000 --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default
+
+# Add commands to the http2  execute the delay, sleep a  10000(10s) delay response
+blade create k8s container-http2 delay --url https://www.taobao.com --target response --time 10000 --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default`)
+			case *http.RequestHttpActionCommandSpec:
+				action.SetExample(`
+# Add commands to the http2  execute the count request
+blade create k8s container-http2 request --url https://www.taobao.com --count 10 --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default`)
+			case *http.TimeOutHttpActionCommandSpec:
+				action.SetExample(`
+# Create a http2 1000(1s) timeout experiment
+blade create k8s container-http2 timeout --url https://www.taobao.com --time 1000 --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default`)
 			case *criexec.RemoveActionCommand:
 				action.SetExample(`
 # Remove container in pod

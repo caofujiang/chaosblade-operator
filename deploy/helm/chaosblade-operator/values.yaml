@@ -14,6 +14,7 @@ operator:
 blade:
   repository: caofujiang/chaosblade-tool
   version: 1.7.2
+
   pullPolicy: IfNotPresent
   downloadUrl: ""
 

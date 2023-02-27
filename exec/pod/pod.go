@@ -21,6 +21,7 @@ import (
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/cpu"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/disk"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/file"
+	"github.com/chaosblade-io/chaosblade-exec-os/exec/http"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/mem"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/network"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/network/tc"
@@ -235,6 +236,25 @@ blade create k8s pod-script exit --exit-code 1 --exit-message this-is-error-mess
 				action.SetExample(`
 # Add commands to execute the script "
 blade create k8s pod-script execute --file test.sh --file-args this:is:file:args:string --dsn=root:Spx#123456@tcp(10.148.55.116:3306)/blade_ops  --names nginx-app --kubeconfig ~/.kube/config --namespace default`)
+
+			case *http.DelayHttpActionCommandSpec:
+				action.SetExample(`
+# Add commands to the http2  execute the delay
+blade create k8s pod-http2 delay --url https://www.taobao.com --time 10000 --names nginx-app --kubeconfig ~/.kube/config --namespace default
+
+# Add commands to the http2  execute the delay,sleep a 10000(10s) delay request
+blade create k8s pod-http2 delay --url https://www.taobao.com --target request --time 10000 --names nginx-app --kubeconfig ~/.kube/config --namespace default
+
+# Add commands to the http2  execute the delay, sleep a  10000(10s) delay response
+blade create k8s pod-http2 delay --url https://www.taobao.com --target response --time 10000 --names nginx-app --kubeconfig ~/.kube/config --namespace default`)
+			case *http.RequestHttpActionCommandSpec:
+				action.SetExample(`
+# Add commands to the http2  execute the count request
+blade create k8s pod-http2 request --url https://www.taobao.com --count 10 --names nginx-app --kubeconfig ~/.kube/config --namespace default`)
+			case *http.TimeOutHttpActionCommandSpec:
+				action.SetExample(`
+# Create a http2 1000(1s) timeout experiment
+blade create k8s pod-http2 timeout --url https://www.taobao.com --time 1000 --names nginx-app --kubeconfig ~/.kube/config --namespace default`)
 			default:
 				action.SetExample(strings.Replace(action.Example(),
 					fmt.Sprintf("blade create %s %s", expModelSpec.Name(), action.Name()),
