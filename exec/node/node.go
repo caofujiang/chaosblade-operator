@@ -420,18 +420,18 @@ blade create k8s node-http2 delay --url https://www.taobao.com --target response
 				action.SetExample(`
 # Add commands to the http2  execute the count request
 # using SSH channel
-blade create k8s container-http2 request --url https://www.taobao.com --count 10 --channel ssh --ssh-host 192.168.1.100 --ssh-user root
+blade create k8s node-http2 request --url https://www.taobao.com --count 10 --channel ssh --ssh-host 192.168.1.100 --ssh-user root
 
 # using DaemonSet
-blade create k8s container-http2 request --url https://www.taobao.com --count 10 --names izbp1a4jchbdwkwi5hk7ekz --kubeconfig ~/.kube/config --timeout 30`)
+blade create k8s node-http2 request --url https://www.taobao.com --count 10 --names izbp1a4jchbdwkwi5hk7ekz --kubeconfig ~/.kube/config --timeout 30`)
 			case *http.TimeOutHttpActionCommandSpec:
 				action.SetExample(`
 # Create a http2 1000(1s) timeout experiment
 # using SSH channel
-blade create k8s container-http2 timeout --url https://www.taobao.com --time 1000 --channel ssh --ssh-host 192.168.1.100 --ssh-user root
+blade create k8s node-http2 timeout --url https://www.taobao.com --time 1000 --channel ssh --ssh-host 192.168.1.100 --ssh-user root
 
 # using DaemonSet
-blade create k8s container-http2 timeout --url https://www.taobao.com --time 1000 --names izbp1a4jchbdwkwi5hk7ekz --kubeconfig ~/.kube/config --timeout 30`)
+blade create k8s node-http2 timeout --url https://www.taobao.com --time 1000 --names izbp1a4jchbdwkwi5hk7ekz --kubeconfig ~/.kube/config --timeout 30`)
 			default:
 				action.SetExample(strings.Replace(action.Example(),
 					fmt.Sprintf("blade create %s %s", expModelSpec.Name(), action.Name()),
@@ -456,7 +456,7 @@ func getResourceFlags() []spec.ExpFlagSpec {
 func NewSelfExpModelCommandSpec() spec.ExpModelCommandSpec {
 	return &SelfExpModelCommandSpec{
 		spec.BaseExpModelCommandSpec{
-			ExpFlags: []spec.ExpFlagSpec{},
+			ExpFlags:   []spec.ExpFlagSpec{},
 			ExpActions: []spec.ExpActionCommandSpec{
 				// TODO
 				//NewCordonActionCommandSpec(),
