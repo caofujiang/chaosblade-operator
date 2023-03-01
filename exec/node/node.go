@@ -418,7 +418,7 @@ blade create k8s node-http2 delay --url https://www.taobao.com --target response
 blade create k8s node-http2 delay --url https://www.taobao.com --target response --time 10000 --names izbp1a4jchbdwkwi5hk7ekz --kubeconfig ~/.kube/config --timeout 30`)
 			case *http.RequestHttpActionCommandSpec:
 				action.SetExample(`
-# Add commands to the http2  execute the count request
+# Add commands to the http2 execute the count request
 # using SSH channel
 blade create k8s node-http2 request --url https://www.taobao.com --count 10 --channel ssh --ssh-host 192.168.1.100 --ssh-user root
 
@@ -426,7 +426,7 @@ blade create k8s node-http2 request --url https://www.taobao.com --count 10 --ch
 blade create k8s node-http2 request --url https://www.taobao.com --count 10 --names izbp1a4jchbdwkwi5hk7ekz --kubeconfig ~/.kube/config --timeout 30`)
 			case *http.TimeOutHttpActionCommandSpec:
 				action.SetExample(`
-# Create a http2 1000(1s) timeout experiment
+# Add commands to the http2 1000(1s) timeout experiment
 # using SSH channel
 blade create k8s node-http2 timeout --url https://www.taobao.com --time 1000 --channel ssh --ssh-host 192.168.1.100 --ssh-user root
 

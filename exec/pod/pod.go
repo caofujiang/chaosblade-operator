@@ -242,18 +242,18 @@ blade create k8s pod-script execute --file test.sh --file-args this:is:file:args
 # Add commands to the http2  execute the delay
 blade create k8s pod-http2 delay --url https://www.taobao.com --time 10000 --names nginx-app --kubeconfig ~/.kube/config --namespace default
 
-# Add commands to the http2  execute the delay,sleep a 10000(10s) delay request
+# Add commands to the http2 execute the delay,sleep a 10000(10s) delay request
 blade create k8s pod-http2 delay --url https://www.taobao.com --target request --time 10000 --names nginx-app --kubeconfig ~/.kube/config --namespace default
 
-# Add commands to the http2  execute the delay, sleep a  10000(10s) delay response
+# Add commands to the http2 execute the delay, sleep a  10000(10s) delay response
 blade create k8s pod-http2 delay --url https://www.taobao.com --target response --time 10000 --names nginx-app --kubeconfig ~/.kube/config --namespace default`)
 			case *http.RequestHttpActionCommandSpec:
 				action.SetExample(`
-# Add commands to the http2  execute the count request
+# Add commands to the http2 execute the count request
 blade create k8s pod-http2 request --url https://www.taobao.com --count 10 --names nginx-app --kubeconfig ~/.kube/config --namespace default`)
 			case *http.TimeOutHttpActionCommandSpec:
 				action.SetExample(`
-# Create a http2 1000(1s) timeout experiment
+# Add commands to the http2 1000(1s) timeout experiment
 blade create k8s pod-http2 timeout --url https://www.taobao.com --time 1000 --names nginx-app --kubeconfig ~/.kube/config --namespace default`)
 			default:
 				action.SetExample(strings.Replace(action.Example(),

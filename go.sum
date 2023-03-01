@@ -163,8 +163,8 @@ github.com/bugsnag/bugsnag-go v0.0.0-20141110184014-b1d153021fcd/go.mod h1:2oa8n
 github.com/bugsnag/osext v0.0.0-20130617224835-0dd3f918b21b/go.mod h1:obH5gd0BsqsP2LwDJ9aOkm/6J86V6lyAXCoQWGw3K50=
 github.com/bugsnag/panicwrap v0.0.0-20151223152923-e2c28503fcd0/go.mod h1:D/8v3kj0zr8ZAKg1AQ6crr+5VwKN5eIywRkfhyM/+dE=
 github.com/campoy/embedmd v1.0.0/go.mod h1:oxyr9RCiSXg0M3VJ3ks0UGfp98BpSSGr0kpiX3MzVl8=
-github.com/caofujiang/chaosblade-exec-cri v1.7.4 h1:9Sz59y33ywNLsMW5mpsrBIeJe8yKshwGkpaB8HT70vk=
-github.com/caofujiang/chaosblade-exec-cri v1.7.4/go.mod h1:nXe8g4AtOVeD0MuZjnboaVPDtmU1mWmDo5V9RwRWoYg=
+github.com/caofujiang/chaosblade-exec-cri v1.7.5 h1:mdd+Le0ooMys7K2hGVt6lPwE2lcZoXKgw6JU/IOZCIw=
+github.com/caofujiang/chaosblade-exec-cri v1.7.5/go.mod h1:nXe8g4AtOVeD0MuZjnboaVPDtmU1mWmDo5V9RwRWoYg=
 github.com/caofujiang/chaosblade-exec-os v1.9.2 h1:aaD2hEvihxJOUkG0R+l8wfH4qF+eD9Lhp0GRvFFnKxk=
 github.com/caofujiang/chaosblade-exec-os v1.9.2/go.mod h1:9WyTsyG6H9CJFt+Cw6KCC2hE8tbyTQ97frf8scjIlY8=
 github.com/caofujiang/chaosblade-spec-go v1.7.5 h1:ZjKTWlXrTHwOM6WDZwWTnGPFMHKskRbmUzQJGSWQSnw=

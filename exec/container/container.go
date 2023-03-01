@@ -290,7 +290,7 @@ blade create k8s container-http2 delay --url https://www.taobao.com --target res
 blade create k8s container-http2 request --url https://www.taobao.com --count 10 --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default`)
 			case *http.TimeOutHttpActionCommandSpec:
 				action.SetExample(`
-# Create a http2 1000(1s) timeout experiment
+# Add commands to the http2  1000(1s) timeout experiment
 blade create k8s container-http2 timeout --url https://www.taobao.com --time 1000 --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default`)
 			case *criexec.RemoveActionCommand:
 				action.SetExample(`
