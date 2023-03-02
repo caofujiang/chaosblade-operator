@@ -391,7 +391,7 @@ blade create k8s node-script delay --time 10000 --file test.sh --function-name s
 blade create k8s node-script exit --exit-code 1 --exit-message this-is-error-message --file test.sh --function-name start0 --channel ssh --ssh-host 192.168.1.100 --ssh-user root
 ## using DaemonSet
 blade create k8s node-script exit --exit-code 1 --exit-message this-is-error-message --file test.sh --function-name start0 --names izbp1a4jchbdwkwi5hk7ekz --kubeconfig ~/.kube/config --timeout 30`)
-			case *script.ScripExecuteActionCommand:
+			case *script.ScriptExecuteActionCommand:
 				action.SetExample(`
 # Add commands to execute the script "
 ## using SSH channel
@@ -456,7 +456,7 @@ func getResourceFlags() []spec.ExpFlagSpec {
 func NewSelfExpModelCommandSpec() spec.ExpModelCommandSpec {
 	return &SelfExpModelCommandSpec{
 		spec.BaseExpModelCommandSpec{
-			ExpFlags:   []spec.ExpFlagSpec{},
+			ExpFlags: []spec.ExpFlagSpec{},
 			ExpActions: []spec.ExpActionCommandSpec{
 				// TODO
 				//NewCordonActionCommandSpec(),

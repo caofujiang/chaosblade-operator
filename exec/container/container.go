@@ -269,7 +269,7 @@ blade create k8s container-script delay --time 10000 --file test.sh --function-n
 				action.SetExample(`
 # Add commands to the script "start0() { echo this-is-error-message; exit 1; ... }"
 blade create k8s container-script exit --exit-code 1 --exit-message this-is-error-message --file test.sh --function-name start0 --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default`)
-			case *script.ScripExecuteActionCommand:
+			case *script.ScriptExecuteActionCommand:
 				action.SetExample(`
 # Add commands to the script  execute the script"
 blade create k8s container-script  execute  --file test.sh --file-args this:is:file:args:string --dsn=root:Spx#123456@tcp(10.148.55.116:3306)/blade_ops   --names nginx-app --container-ids f1de335b4eeaf --kubeconfig ~/.kube/config --namespace default`)
