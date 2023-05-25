@@ -2,9 +2,8 @@
 
 # chaosblade-operator
 operator:
-  repository: caofujiang/chaosblade-operator
+  repository: ghcr.io/chaosblade-io/chaosblade-operator
   version: 1.7.2
-
   # image.pullPolicy: must be Always|IfNotPresent|Never
   pullPolicy: IfNotPresent
   # qps of kubernetes client
@@ -12,9 +11,8 @@ operator:
   reconcileCount: 20
 
 blade:
-  repository: caofujiang/chaosblade-tool
+  repository: ghcr.io/chaosblade-io/chaosblade-tool
   version: 1.7.2
-
   pullPolicy: IfNotPresent
   downloadUrl: ""
 
