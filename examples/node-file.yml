@@ -1,0 +1,20 @@
+apiVersion: chaosblade.io/v1alpha1
+kind: ChaosBlade
+metadata:
+  name: node-file
+spec:
+  experiments:
+  - scope: node
+    target: file
+    action : "add"
+    desc: "add node file"
+    matchers:
+    - name: filepath
+      value:
+      - "/opt/chaosblade/nginx.log"
+    - name: content
+      value:
+      - "hello-go"
+    - name: names
+      value:
+      - "10.148.55.117"
