@@ -64,7 +64,7 @@ spec:
               name: containerd-etc
             - mountPath: /var/run/netns
               name: netns
-            - mountPath: /sys
+            - mountPath: /host-sys
               name: sys
       dnsPolicy: ClusterFirstWithHostNet
       hostNetwork: true
