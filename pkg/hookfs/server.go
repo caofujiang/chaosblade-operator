@@ -75,6 +75,7 @@ func (s *ChaosbladeHookServer) Start(stop <-chan struct{}) error {
 			}
 		}
 	}
+	
 }
 
 func (s *ChaosbladeHookServer) InjectHandler(w http.ResponseWriter, r *http.Request) {

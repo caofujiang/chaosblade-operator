@@ -69,7 +69,7 @@ func (e *ExecCommandInPodExecutor) Exec(uid string, ctx context.Context, expMode
 			v1alpha1.CreateFailExperimentStatus(err.Error(), []v1alpha1.ResourceStatus{}),
 			err)
 	}
-	logrusField.Infof("experiment identifiers: %v", experimentIdentifiers)
+	logrusField.Infof("executor_copy-get-the-experiment-identifiers: %v", experimentIdentifiers)
 
 	statuses := experimentStatus.ResStatuses
 	success := true
@@ -125,7 +125,8 @@ func (e *ExecCommandInPodExecutor) Exec(uid string, ctx context.Context, expMode
 
 	ParallelizeExec(len(experimentIdentifiers), execCommandInPod)
 
-	logrusField.Infof("success: %t, statuses: %+v", success, statuses)
+	logrusField.Infof("executor_copy--success: %t, statuses: %+v", success, statuses)
+
 	if success {
 		experimentStatus.State = v1alpha1.SuccessState
 	} else {
@@ -133,7 +134,8 @@ func (e *ExecCommandInPodExecutor) Exec(uid string, ctx context.Context, expMode
 		if len(statuses) == 0 {
 			experimentStatus.Error = "the resources not found"
 		} else {
-			experimentStatus.Error = "see resStatus for the error details"
+			//experimentStatus.Error = "see resStatus for the error details"
+			experimentStatus.Error = statuses[0].Error
 		}
 	}
 	experimentStatus.Success = success

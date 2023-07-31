@@ -54,7 +54,7 @@ func main() {
 	})
 	stopCh := signals.SetupSignalHandler()
 	chaosbladeHookServer := chaosbladehook.NewChaosbladeHookServer(address)
-	logFields.Infoln("Start chaosblade hook server.")
+	logFields.Infoln("hookfs-main-Start chaosblade hook server.")
 	go chaosbladeHookServer.Start(stopCh)
 
 	logFields.Infoln("Start fuse server.")
