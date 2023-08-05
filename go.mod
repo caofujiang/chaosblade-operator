@@ -1,9 +1,11 @@
 module github.com/chaosblade-io/chaosblade-operator
 
+go 1.20
+
 require (
-	github.com/chaosblade-io/chaosblade-exec-cri v1.7.2
-	github.com/chaosblade-io/chaosblade-exec-os v1.7.2
-	github.com/chaosblade-io/chaosblade-spec-go v1.7.2
+	github.com/chaosblade-io/chaosblade-exec-cri v1.7.3
+	github.com/chaosblade-io/chaosblade-exec-os v1.7.3
+	github.com/chaosblade-io/chaosblade-spec-go v1.7.3
 	github.com/ethercflow/hookfs v0.3.0
 	github.com/go-openapi/spec v0.19.4
 	github.com/hanwen/go-fuse v1.0.0
@@ -62,7 +64,7 @@ require (
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang/groupcache v0.0.0-20200121045136-8c9f03a8e57e // indirect
 	github.com/golang/protobuf v1.5.0 // indirect
-	github.com/google/go-cmp v0.5.5 // indirect
+	github.com/google/go-cmp v0.5.6 // indirect
 	github.com/google/gofuzz v1.1.0 // indirect
 	github.com/google/uuid v1.2.0 // indirect
 	github.com/googleapis/gnostic v0.4.1 // indirect
@@ -98,7 +100,7 @@ require (
 	golang.org/x/crypto v0.1.0 // indirect
 	golang.org/x/net v0.1.0 // indirect
 	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d // indirect
-	golang.org/x/sync v0.0.0-20201207232520-09787c993a3a // indirect
+	golang.org/x/sync v0.0.0-20220722155255-886fb9371eb4 // indirect
 	golang.org/x/sys v0.1.0 // indirect
 	golang.org/x/term v0.1.0 // indirect
 	golang.org/x/text v0.4.0 // indirect
@@ -119,11 +121,9 @@ require (
 	sigs.k8s.io/yaml v1.2.0 // indirect
 )
 
-go 1.20
-
 replace (
-	github.com/chaosblade-io/chaosblade-exec-cri v1.7.2 => github.com/caofujiang/chaosblade-exec-cri v1.8.0
-	github.com/chaosblade-io/chaosblade-exec-os v1.7.2 => github.com/caofujiang/chaosblade-exec-os v1.9.7
-	github.com/chaosblade-io/chaosblade-spec-go v1.7.2 => github.com/caofujiang/chaosblade-spec-go v1.7.7
+	github.com/chaosblade-io/chaosblade-exec-cri v1.7.3 => github.com/caofujiang/chaosblade-exec-cri v1.8.1
+	github.com/chaosblade-io/chaosblade-exec-os v1.7.3 => github.com/caofujiang/chaosblade-exec-os v1.9.8
+	github.com/chaosblade-io/chaosblade-spec-go v1.7.3 => github.com/caofujiang/chaosblade-spec-go v1.7.7
 	k8s.io/client-go => k8s.io/client-go v0.20.6 // Required by prometheus-operator
 )
