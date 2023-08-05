@@ -144,7 +144,7 @@ func getMatchedContainerMetaList(pods []v1.Pod, containerIdsValue, containerName
 			if containerStatus.ContainerID == "" {
 				containerStatusErr = errors.New("containerId is empty")
 			} else {
-				containerRuntime,containerId = model.TruncateContainerObjectMetaUid(containerStatus.ContainerID)
+				containerRuntime, containerId = model.TruncateContainerObjectMetaUid(containerStatus.ContainerID)
 				if containerRuntime == container.DockerRuntime {
 					containerId = containerId[:12]
 				}
@@ -161,7 +161,7 @@ func getMatchedContainerMetaList(pods []v1.Pod, containerIdsValue, containerName
 					if expectedContainerId == "" {
 						continue
 					}
-					if strings.HasPrefix(containerId, expectedContainerId) {
+					if strings.HasPrefix(expectedContainerId, containerId) {
 						if containerStatusErr != nil {
 							return containerObjectMetaList, spec.ResponseFailWithFlags(spec.ParameterInvalid,
 								model.ContainerIdsFlag.Name, expectedContainerId,
