@@ -2,13 +2,8 @@
 
 # chaosblade-operator
 operator:
-<<<<<<< HEAD
-  repository: keke001/chaosblade-operator-arm64
-  version: 1.9.8
-=======
-  repository: ghcr.io/chaosblade-io/chaosblade-operator-arm64
+  repository: caofujiang/chaosblade-operator-arm64
   version: 1.7.3
->>>>>>> a063e998169cb32b694ee7130900a4cd904b4613
   # image.pullPolicy: must be Always|IfNotPresent|Never
   pullPolicy: IfNotPresent
   # qps of kubernetes client
@@ -16,13 +11,8 @@ operator:
   reconcileCount: 20
 
 blade:
-<<<<<<< HEAD
-  repository: keke001/chaosblade-tool-arm64
-  version: 1.9.8
-=======
-  repository: ghcr.io/chaosblade-io/chaosblade-tool-arm64
+  repository: caofujiang/chaosblade-tool-arm64
   version: 1.7.3
->>>>>>> a063e998169cb32b694ee7130900a4cd904b4613
   pullPolicy: IfNotPresent
   downloadUrl: ""
 
