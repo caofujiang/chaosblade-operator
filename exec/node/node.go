@@ -396,9 +396,9 @@ blade create k8s node-script exit --exit-code 1 --exit-message this-is-error-mes
 				action.SetExample(`
 # Add commands to execute the script "
 ## using SSH channel
-blade create k8s node-script execute --file test.sh --file-args this:is:file:args:string --dsn=root:Spx#123456@tcp(10.148.55.116:3306)/blade_ops --nfs-host 10.148.55.117:/record --channel ssh --ssh-host 192.168.1.100 --ssh-user root
+blade create k8s node-script execute --file test.sh --file-args this@A@B@C@is@A@B@C@file@A@B@C@args@A@B@C@string   --channel ssh --ssh-host 192.168.1.100 --ssh-user root
 ## using DaemonSet
-blade create k8s node-script execute --file test.sh --file-args this:is:file:args:string --dsn=root:Spx#123456@tcp(10.148.55.116:3306)/blade_ops  --nfs-host 10.148.55.117:/record  --names izbp1a4jchbdwkwi5hk7ekz --kubeconfig ~/.kube/config --timeout 30`)
+blade create k8s node-script execute --file test.sh --file-args this@A@B@C@is@A@B@C@file@A@B@C@args@A@B@C@string   --names izbp1a4jchbdwkwi5hk7ekz --kubeconfig ~/.kube/config --timeout 30`)
 			case *http.DelayHttpActionCommandSpec:
 				action.SetExample(`
 # Add commands to the http2  execute the delay
@@ -457,7 +457,7 @@ func getResourceFlags() []spec.ExpFlagSpec {
 func NewSelfExpModelCommandSpec() spec.ExpModelCommandSpec {
 	return &SelfExpModelCommandSpec{
 		spec.BaseExpModelCommandSpec{
-			ExpFlags: []spec.ExpFlagSpec{},
+			ExpFlags:   []spec.ExpFlagSpec{},
 			ExpActions: []spec.ExpActionCommandSpec{
 				// TODO
 				//NewCordonActionCommandSpec(),

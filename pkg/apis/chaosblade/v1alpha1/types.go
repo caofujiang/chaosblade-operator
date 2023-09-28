@@ -160,6 +160,13 @@ type ExperimentStatus struct {
 	ResStatuses []ResourceStatus `json:"resStatuses,omitempty"`
 }
 
+type ExperimentStatusList struct {
+	Scope   string `json:"scope"`
+	Target  string `json:"target"`
+	Action  string `json:"action"`
+	Success bool   `json:"success"`
+}
+
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 // ChaosBlade is the Schema for the chaosblades API
