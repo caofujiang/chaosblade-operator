@@ -70,7 +70,7 @@ build_arm64:
 		-v $(shell echo -n ${GOPATH}):/go \
 		-v $(shell pwd):/go/src/github.com/chaosblade-io/chaosblade-operator \
 		-w /go/src/github.com/chaosblade-io/chaosblade-operator \
-		chaosbladeio/chaosblade-build-arm:latest
+		keke001/chaosblade-build-arm:latest
 
 pre_build:
 	mkdir -p $(BUILD_TARGET_BIN) $(BUILD_TARGET_YAML)

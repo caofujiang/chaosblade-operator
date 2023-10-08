@@ -89,3 +89,4 @@ vendor
 ### project ###
 build/cache
 test/
+operator_build.sh

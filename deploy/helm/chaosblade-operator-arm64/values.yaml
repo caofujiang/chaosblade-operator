@@ -2,7 +2,7 @@
 
 # chaosblade-operator
 operator:
-  repository: caofujiang/chaosblade-operator-arm64
+  repository: keke001/chaosblade-operator-arm64
   version: 1.7.5
   # image.pullPolicy: must be Always|IfNotPresent|Never
   pullPolicy: IfNotPresent
@@ -11,7 +11,7 @@ operator:
   reconcileCount: 20
 
 blade:
-  repository: caofujiang/chaosblade-tool-arm64
+  repository: keke001/chaosblade-tool-arm64
   version: 1.7.5
   pullPolicy: IfNotPresent
   downloadUrl: ""
