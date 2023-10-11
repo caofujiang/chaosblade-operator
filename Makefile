@@ -1,8 +1,12 @@
 .PHONY: build clean
 
 GO_ENV=CGO_ENABLED=1
+GO_ENV_ARM=CGO_ENABLED=0
 GO_MODULE=GO111MODULE=on
+GOOS=GOOS=linux
+GOARCH=GOARCH=arm64
 GO=env $(GO_ENV) $(GO_MODULE) go
+GO_ARM=env $(GO_ENV_ARM) $(GO_MODULE) $(GOOS) $(GOARCH) go
 
 UNAME := $(shell uname)
 
@@ -70,7 +74,7 @@ build_arm64:
 		-v $(shell echo -n ${GOPATH}):/go \
 		-v $(shell pwd):/go/src/github.com/chaosblade-io/chaosblade-operator \
 		-w /go/src/github.com/chaosblade-io/chaosblade-operator \
-		keke001/chaosblade-build-arm:latest
+		chaosblade-operator-build-musl:latest
 
 pre_build:
 	mkdir -p $(BUILD_TARGET_BIN) $(BUILD_TARGET_YAML)
@@ -81,9 +85,10 @@ build_spec_yaml: build/spec.go
 build_yaml: pre_build build_spec_yaml
 
 build_fuse:
-	$(GO) build $(GO_FLAGS) -o $(BUILD_TARGET_BIN)/chaos_fuse cmd/hookfs/main.go
+	$(GO)  build $(GO_FLAGS)  -o $(BUILD_TARGET_BIN)/chaos_fuse cmd/hookfs/main.go
+build_fuse_arm:
+	$(GO_ARM) build   -o $(BUILD_TARGET_BIN)/chaos_fuse cmd/hookfs/main.go
 
-# test
 test:
 	go test -race -coverprofile=coverage.txt -covermode=atomic ./...
 # clean all build result
