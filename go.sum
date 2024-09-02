@@ -160,8 +160,8 @@ github.com/bugsnag/bugsnag-go v0.0.0-20141110184014-b1d153021fcd/go.mod h1:2oa8n
 github.com/bugsnag/osext v0.0.0-20130617224835-0dd3f918b21b/go.mod h1:obH5gd0BsqsP2LwDJ9aOkm/6J86V6lyAXCoQWGw3K50=
 github.com/bugsnag/panicwrap v0.0.0-20151223152923-e2c28503fcd0/go.mod h1:D/8v3kj0zr8ZAKg1AQ6crr+5VwKN5eIywRkfhyM/+dE=
 github.com/campoy/embedmd v1.0.0/go.mod h1:oxyr9RCiSXg0M3VJ3ks0UGfp98BpSSGr0kpiX3MzVl8=
-github.com/caofujiang/chaosblade-exec-cri v1.8.6 h1:SoMVU6CRZJ0yrodtRILd/RM9j3uagCb5LyAtQvtI46Q=
-github.com/caofujiang/chaosblade-exec-cri v1.8.6/go.mod h1:UrICUK19vwiVwvWkw/X88Zcqyrp/R9ktppSvzoNFCyE=
+github.com/caofujiang/chaosblade-exec-cri v1.8.7 h1:38vRpCBwjRRjmxjLtk3EjTLb1+kHeL2vRNegpfAuQX0=
+github.com/caofujiang/chaosblade-exec-cri v1.8.7/go.mod h1:C6fIyUPzzlvgNETvzDll6DAhnN4XZZn8bMX6/gIqmE4=
 github.com/caofujiang/chaosblade-exec-os v1.9.15 h1:KusqPOZWfs3Kbf870kbpSEs8UbEGc4oHVzRIK4n4UUI=
 github.com/caofujiang/chaosblade-exec-os v1.9.15/go.mod h1:/vN93AAqqYUtKzSwroITZ6Tmot72tj/HhsGedOVCQcA=
 github.com/caofujiang/chaosblade-spec-go v1.7.10 h1:JcOUJB9IWEufzhZ/A3i51cbLTeryh0Hs/1RLPkUEgxs=
@@ -1696,6 +1696,7 @@ k8s.io/component-base v0.20.6/go.mod h1:6f1MPBAeI+mvuts3sIdtpjljHWBQ2cIy38oBIWMY
 k8s.io/cri-api v0.17.3/go.mod h1:X1sbHmuXhwaHs9xxYffLqJogVsnI+f6cPRcgPel7ywM=
 k8s.io/cri-api v0.20.1/go.mod h1:2JRbKt+BFLTjtrILYVqQK5jqhI+XNdF6UiGMgczeBCI=
 k8s.io/cri-api v0.20.4/go.mod h1:2JRbKt+BFLTjtrILYVqQK5jqhI+XNdF6UiGMgczeBCI=
+k8s.io/cri-api v0.20.6 h1:iXX0K2pRrbR8yXbZtDK/bSnmg/uSqIFiVJK1x4LUOMc=
 k8s.io/cri-api v0.20.6/go.mod h1:ew44AjNXwyn1s0U4xCKGodU7J1HzBeZ1MpGrpa5r8Yc=
 k8s.io/gengo v0.0.0-20190128074634-0689ccc1d7d6/go.mod h1:ezvh/TsK7cY6rbqRK0oQQ8IAqLxYwwyPxAX1Pzy0ii0=
 k8s.io/gengo v0.0.0-20190822140433-26a664648505/go.mod h1:ezvh/TsK7cY6rbqRK0oQQ8IAqLxYwwyPxAX1Pzy0ii0=

@@ -114,6 +114,7 @@ require (
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
+	k8s.io/cri-api v0.20.6 // indirect
 	k8s.io/klog v1.0.0 // indirect
 	k8s.io/klog/v2 v2.4.0 // indirect
 	k8s.io/utils v0.0.0-20201110183641-67b214c5f920 // indirect
@@ -122,7 +123,7 @@ require (
 )
 
 replace (
-	github.com/chaosblade-io/chaosblade-exec-cri v1.7.4 => github.com/caofujiang/chaosblade-exec-cri v1.8.6
+	github.com/chaosblade-io/chaosblade-exec-cri v1.7.4 => github.com/caofujiang/chaosblade-exec-cri v1.8.7
 	github.com/chaosblade-io/chaosblade-exec-os v1.7.4 => github.com/caofujiang/chaosblade-exec-os v1.9.15
 	github.com/chaosblade-io/chaosblade-spec-go v1.7.4 => github.com/caofujiang/chaosblade-spec-go v1.7.10
 	k8s.io/client-go => k8s.io/client-go v0.20.6 // Required by prometheus-operator

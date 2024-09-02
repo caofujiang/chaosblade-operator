@@ -362,7 +362,9 @@ func TruncateContainerObjectMetaUid(uid string) (containerRuntime, containerId s
 	if strings.HasPrefix(uid, "containerd://") {
 		return container.ContainerdRuntime, strings.ReplaceAll(uid, "containerd://", "")
 	}
-
+	if strings.HasPrefix(uid, "cri-o://") {
+		return container.CRIORuntime, strings.ReplaceAll(uid, "cri-o://", "")
+	}
 	return container.DockerRuntime, strings.ReplaceAll(uid, "docker://", "")
 }
 
