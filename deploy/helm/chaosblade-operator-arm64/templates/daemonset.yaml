@@ -66,6 +66,14 @@ spec:
               name: netns
             - mountPath: /host-sys
               name: sys
+            - mountPath: /var/run/crio/crio.sock
+              name: crio-socket
+            - mountPath: /var/lib/containers
+              name: crio-lib
+            - mountPath: /etc/crio
+              name: crio-etc
+            - mountPath: /var/run/crio/
+              name: crio
       dnsPolicy: ClusterFirstWithHostNet
       hostNetwork: true
       hostPID: true
@@ -107,5 +115,17 @@ spec:
         - hostPath:
             path: /sys
           name: sys
+        - hostPath:
+            path: /var/run/crio/crio.sock
+          name: crio-socket
+        - hostPath:
+            path: /var/run/crio/
+          name: crio
+        - hostPath:
+            path: /var/lib/containers
+          name: crio-lib
+        - hostPath:
+            path: /etc/crio
+          name: crio-etc
       serviceAccountName: chaosblade
 {{- end }}
