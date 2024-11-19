@@ -160,10 +160,10 @@ github.com/bugsnag/bugsnag-go v0.0.0-20141110184014-b1d153021fcd/go.mod h1:2oa8n
 github.com/bugsnag/osext v0.0.0-20130617224835-0dd3f918b21b/go.mod h1:obH5gd0BsqsP2LwDJ9aOkm/6J86V6lyAXCoQWGw3K50=
 github.com/bugsnag/panicwrap v0.0.0-20151223152923-e2c28503fcd0/go.mod h1:D/8v3kj0zr8ZAKg1AQ6crr+5VwKN5eIywRkfhyM/+dE=
 github.com/campoy/embedmd v1.0.0/go.mod h1:oxyr9RCiSXg0M3VJ3ks0UGfp98BpSSGr0kpiX3MzVl8=
-github.com/caofujiang/chaosblade-exec-cri v1.8.9 h1:vY/WD7T/SFxkNTNS4tRSoSBEry+ZcItctSJFWhbjUrM=
-github.com/caofujiang/chaosblade-exec-cri v1.8.9/go.mod h1:C6fIyUPzzlvgNETvzDll6DAhnN4XZZn8bMX6/gIqmE4=
-github.com/caofujiang/chaosblade-exec-os v1.9.15 h1:KusqPOZWfs3Kbf870kbpSEs8UbEGc4oHVzRIK4n4UUI=
-github.com/caofujiang/chaosblade-exec-os v1.9.15/go.mod h1:/vN93AAqqYUtKzSwroITZ6Tmot72tj/HhsGedOVCQcA=
+github.com/caofujiang/chaosblade-exec-cri v1.8.10 h1:V0iboliubLhLO27ufYUnBAnX4CyUC+GHXTaywVNlWzA=
+github.com/caofujiang/chaosblade-exec-cri v1.8.10/go.mod h1:D0IpjoKJxPh3MgfW97TaSZJHwy6wWlp8i8R7S12EHD4=
+github.com/caofujiang/chaosblade-exec-os v1.9.16 h1:ogsXSzUC4Kg7iepi0VIsJP9GhpZu9kAeMXpWQj7nCBg=
+github.com/caofujiang/chaosblade-exec-os v1.9.16/go.mod h1:/vN93AAqqYUtKzSwroITZ6Tmot72tj/HhsGedOVCQcA=
 github.com/caofujiang/chaosblade-spec-go v1.7.10 h1:JcOUJB9IWEufzhZ/A3i51cbLTeryh0Hs/1RLPkUEgxs=
 github.com/caofujiang/chaosblade-spec-go v1.7.10/go.mod h1:QrsUvbhnSmI7SjsKKdNM+F8MnkEE9iIZg2xV425nKsY=
 github.com/cenkalti/backoff v0.0.0-20181003080854-62661b46c409/go.mod h1:90ReRw6GdpyfrHakVjL/QHaoyV4aDUVVkXQJJJ3NXXM=
